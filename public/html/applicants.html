@@ -12,6 +12,16 @@
       <h1>Applicants</h1>
       <ul id="applications" class="list-unstyled">
         <li>Applicants should go here.</li>
+        <div class="person" ng-repeat="person in allApplicants">
+        <div class="remove-btn btn btn-small btn-danger" ng-click="removePerson()">X</div>
+            <h3>{{person.name}}</h3>
+            <p><span class="subject">short bio:</span> {{person.bio}}</p>
+            <h4>Skills</h4>
+            <ul ng-repeat="skill in person.skills">
+              <li>{{skill}}</li>
+            </ul>
+            <p><span class="subject">years of experience: </span>{{person.years}}</p>
+        </div>
       </ul>
     </div>
 	  
