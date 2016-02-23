@@ -13,8 +13,9 @@
       <ul id="applications" class="list-unstyled">
         <li>Applicants should go here.</li>
         <div class="person" ng-repeat="person in allApplicants">
-        <div class="remove-btn btn btn-small btn-danger" ng-click="removePerson()">X</div>
+        <div class="remove-btn btn btn-small btn-danger" ng-click="removePerson($index)">X</div>
             <h3>{{person.name}}</h3>
+            <p>id: {{person._id}}</p>
             <p><span class="subject">short bio:</span> {{person.bio}}</p>
             <h4>Skills</h4>
             <ul ng-repeat="skill in person.skills">

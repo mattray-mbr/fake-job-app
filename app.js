@@ -27,7 +27,6 @@ var jobsCtrl = require('./controllers/jobsCtrl.js')
 //pulls in the controllers functions for concise code in this file
 
 
-
 // displays a list of applicants
 app.get('/applicants', jobsCtrl.getApplicants)
 
@@ -37,6 +36,8 @@ app.get('/applicants', jobsCtrl.getApplicants)
 app.post('/applicant', jobsCtrl.newApplicant)
 
 app.get('/allApplicants', jobsCtrl.getAllApplicants)
+
+app.post('/removeApplicant', jobsCtrl.deleteApplicant)
 
 
 

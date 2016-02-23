@@ -13,9 +13,11 @@ var app = angular.module('JobApp', [])
 			$scope.allApplicants = returnData.data
 		})
 
-		$scope.removePersion = function(){
-			$http.remove('/removeApplicant', something).then(function(returnData){
-
+		$scope.removePerson = function(index){
+			console.log($scope.allApplicants[index]._id)
+			$http.post('/removeApplicant', {appID: $scope.allApplicants[index]._id})
+			.then(function(returnData){
+				$scope.allApplicants = returnData.data
 			})
 		}
 

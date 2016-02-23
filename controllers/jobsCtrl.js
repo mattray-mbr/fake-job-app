@@ -27,9 +27,17 @@ function getAllApplicants(req, res){
 	})
 }
 
+function deleteApplicant(req, res){
+	console.log(req.body.appID)
+	applicant.remove({_id: req.body.appID}, function(err, docs){
+		res.send(docs)
+	})
+}
+
 
 module.exports = {
 	getApplicants    : getApplicants,
 	newApplicant     : newApplicant,
-	getAllApplicants : getAllApplicants
+	getAllApplicants : getAllApplicants,
+	deleteApplicant  : deleteApplicant
 }
