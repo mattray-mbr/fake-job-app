@@ -30,7 +30,7 @@ function getAllApplicants(req, res){
 function deleteApplicant(req, res){
 	console.log(req.body.appID)
 	applicant.remove({_id: req.body.appID}, function(err, docs){
-		res.send(docs)
+		res.send(true)
 	})
 }
 

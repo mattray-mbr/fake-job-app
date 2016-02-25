@@ -16,9 +16,7 @@ var app = angular.module('JobApp', [])
 		$scope.removePerson = function(index){
 			console.log($scope.allApplicants[index]._id)
 			$http.post('/removeApplicant', {appID: $scope.allApplicants[index]._id})
-			.then(function(returnData){
-				$scope.allApplicants = returnData.data
-			})
+			$scope.allApplicants.splice(index, 1)
 		}
 
 	}]);
